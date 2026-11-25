@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dean & Director KRC – 60-Mark Assessment Rubric</title>
+<style>
+:root{--ink:#24352e;--muted:#66756d;--green:#245b45;--pale:#edf3ee;--paper:#fbfaf5;--line:#d9e1da;--gold:#b18a45}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:var(--green);color:white;padding:28px max(20px,calc((100% - 1100px)/2))}
+header h1{margin:0 0 5px;font-size:clamp(23px,4vw,34px)}header p{margin:0;color:#e3eee6}
+main{max-width:1100px;margin:24px auto;padding:0 18px}.toolbar,.panel,.summary{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 16px}
+.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.toolbar label{font-weight:650}
+select,input,textarea,button{font:inherit}select,input[type=text],input[type=number],textarea{border:1px solid #bdcbc0;border-radius:8px;padding:9px;background:white;color:var(--ink);max-width:100%}
+button{border:0;border-radius:8px;padding:10px 15px;background:var(--green);color:white;cursor:pointer;font-weight:650}button.secondary{background:#e8eee9;color:var(--green)}button:focus,input:focus,select:focus{outline:3px solid #b9d5c2;outline-offset:1px}
+h2{font-size:20px;margin:0 0 12px}h3{font-size:16px;margin:18px 0 8px}.muted,.hint{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.field{display:flex;flex-direction:column;gap:5px}.field label{font-weight:600}.criterion{display:grid;grid-template-columns:minmax(180px,1fr) 100px minmax(150px,1.2fr);gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.criterion:last-child{border:0}.criterion strong{font-weight:650}.criterion small{color:var(--muted)}.score{width:100%}
+.pill{display:inline-block;background:var(--pale);color:var(--green);padding:3px 9px;border-radius:20px;font-size:12px;font-weight:700}
+.total{font-size:34px;font-weight:800;color:var(--green)}.meter{height:9px;background:#e8eee9;border-radius:20px;overflow:hidden}.meter span{display:block;height:100%;background:var(--green);width:0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tabs button{background:#e8eee9;color:var(--green)}.tabs button.active{background:var(--green);color:white}
+.hidden{display:none}.note{background:#fff8e9;border-left:4px solid var(--gold);padding:12px;border-radius:6px;margin:12px 0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+table{width:100%;border-collapse:collapse;margin-top:8px}th,td{text-align:left;padding:9px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--pale)}
+footer{max-width:1100px;margin:20px auto;padding:0 18px 35px;color:var(--muted);font-size:13px}
+@media(max-width:620px){.criterion{grid-template-columns:1fr 90px}.criterion small{grid-column:1/-1}.toolbar{align-items:stretch}.toolbar>*{width:100%}}
+@media print{body{background:white}header{background:white;color:black;padding:10px 0}header p{color:#333}main{margin:0;max-width:none}.toolbar button,.actions,.tabs{display:none}.panel,.summary{break-inside:avoid;border:1px solid #aaa}.hidden{display:block!important}}
+</style></head>
+<body>
+<header><h1 id="title">Dean & Director KRC – 60-Mark Assessment Rubric</h1><p id="subtitle">Gondwana University, Gadchiroli · Reference-based assessment workspace</p></header>
+<main>
+<section class="toolbar">
+ <div class="field"><label id="langLabel">Language / भाषा</label><select id="lang"><option value="en">English</option><option value="mr">मराठी</option></select></div>
+ <div class="field"><label id="postLabel">Select post</label><select id="cadre"><option value="dean" selected>Dean</option><option value="dkrc">Director, Knowledge Resource Centre (KRC)</option></select></div>
+ <div class="field"><label id="candidateLabel">Candidate name</label><input id="candidate" type="text" placeholder="Enter candidate name"></div>
+ <div class="field"><label id="subjectLabel">Subject / Department</label><input id="subject" type="text" placeholder="Enter subject"></div>
+</section>
+
+<section class="panel">
+<h2 id="academicHeading">1. Academic & Research Credentials</h2>
+<p class="muted" id="academicInstruction">Enter verified marks under the provisional 60-mark working matrix. Maximum 60.</p>
+<div class="note">Enter marks for each sub-component only after checking the supporting documents and applying the applicable university-ranking multiplier. M.Phil. and Ph.D. are subject to a combined ceiling.</div>
+<div id="academicBreakdown"></div>
+<div class="grid">
+ <div class="field"><label id="academicScoreLabel">Academic & research total (maximum 60)</label><input class="score" type="number" id="academicScore" min="0" max="60" step=".01" value="0" readonly></div>
+ <div class="field"><label id="academicEvidenceLabel">Verification / remarks</label><textarea id="academicEvidence" rows="2" placeholder="Documents checked, calculation notes..."></textarea></div>
+</div>
+<div id="cadreDetails"></div>
+</section>
+
+<section class="panel">
+<h2>60-Mark Assessment Matrix</h2>
+<p class="muted">The working matrix below is retained from the existing 60-mark rubric. Its use for Dean and Director KRC must be approved/confirmed by the competent University authority because the 11.02.2026 GR does not prescribe a separate scoring schedule for these two posts.</p>
+<table>
+<tr><th>Component</th><th>Maximum</th><th>Assessment basis in this working tool</th></tr>
+<tr><td>A. Academic Records</td><td>30</td><td>Graduation, Post-Graduation, M.Phil./Ph.D. (combined maximum 12), NET/JRF/SET, with degree-awarding university factor.</td></tr>
+<tr><td>B. Experience</td><td>6</td><td>Verified relevant teaching / professional / administrative experience, as applicable to the selected post.</td></tr>
+<tr><td>C. Research & Professional Contribution</td><td>24</td><td>Verified publications, books/IPR, awards, MOOCs, Ph.D. guidance and research/consultancy contribution, as applicable.</td></tr>
+<tr><th>Total</th><th>60</th><th>Academic & Research / Professional assessment only.</th></tr>
+</table>
+</section>
+
+<section class="panel">
+<h2 id="complianceTitle">Important procedural safeguards</h2>
+<ul id="complianceList">
+<li>University decides the number of eligible candidates to be called per vacancy and category.</li>
+
+<li>Audio-video recording of Selection Committee proceedings is required; recording is sealed with signatures immediately after completion and treated as confidential.</li>
+<li>This interactive rubric is limited strictly to the 60-mark Academic & Research Credentials component.</li>
+</ul>
+</section>
+<section class="panel"><h2 id="sourceTitle">Reference Documents & Important Note</h2>
+<p><strong>Government Resolution applicable as reference</strong></p>
+<p><a href="https://gr.maharashtra.gov.in/Site/Upload/Government%20Resolutions/Marathi/202602111416441108.pdf" target="_blank" rel="noopener">Government Resolution dated 11.02.2026 – Official PDF (selection framework)</a></p>
+<div class="grid">
+ <div>
+  <h3>Dean</h3>
+  <p><a href="https://unigug.ac.in/news_attachment/1792232619_38_0001.pdf" target="_blank" rel="noopener">Gondwana University Direction No. 38 of 2026 – Dean</a></p>
+  <p><a href="https://unigug.ac.in/news_attachment/1775803105_Dean_Advt_65.pdf" target="_blank" rel="noopener">Advertisement No. 65 – Dean (official PDF)</a></p>
+ </div>
+ <div>
+  <h3>Director, KRC</h3>
+  <p><a href="https://unigug.ac.in/news_attachment/1792232256_27_0001.pdf" target="_blank" rel="noopener">Gondwana University Direction No. 27 of 2026 – Director KRC</a></p>
+  <p><a href="https://unigug.ac.in/news_attachment/1776409574_Professor_KRC_Sport_Advt._66.pdf" target="_blank" rel="noopener">Advertisement No. 66 – Professor / Director KRC / Director Sports (official PDF)</a></p>
+ </div>
+</div>
+<p class="note" id="disclaimer"><strong>Important legal and administrative note:</strong> This website retains only the 60-mark Academic &amp; Research working matrix; the 20-mark Teaching Skill and 20-mark Interview sections are excluded. The 11.02.2026 Government Resolution prescribes cadre-specific assessment for regular teacher recruitment and does not provide a separate 60-mark schedule for Dean or Director KRC. Dean is a separate statutory officer post under the Dean Direction. The KRC Direction identifies Director KRC within the teacher definition and refers to Section 102, but does not itself set out a KRC-specific 60-mark matrix. Accordingly, the matrix on this site is a provisional working/reference matrix only and must not be represented as the formally approved selection scheme for either post unless the competent University authority confirms/adopts it. Eligibility, experience and statutory selection-committee requirements must be verified independently against the relevant Direction and advertisement. All marks must be supported by verified documents.</p>
+</section>
+</main>
+<footer>Interactive local tool · Dean / Director KRC · 60-mark matrix only · No data is uploaded.</footer>
+<script>
+const $=id=>document.getElementById(id);
+const teaching=[
+ ["ICT skills, modern teaching-learning aids & language proficiency","ICT साधने, आधुनिक अध्यापन-अध्ययन साधने व भाषिक प्रावीण्य"],
+ ["Quality, depth & effectiveness of content delivery","अध्यापन विषयवस्तूची गुणवत्ता, सखोलता व परिणामकारकता"],
+ ["Behavioural ethics","वर्तनविषयक नैतिकता"],
+ ["LOCF approach in teaching & assessment","अध्यापन व मूल्यमापनातील LOCF दृष्टिकोन"]
+];
+const interview=[
+ ["Domain knowledge & recent developments (max 8)","विषयज्ञान व क्षेत्रातील अलीकडील घडामोडी (कमाल 8)",8],
+ ["Critical thinking, logical reasoning & problem solving (max 7)","चिकित्सक विचार, तार्किक क्षमता व समस्या निराकरण (कमाल 7)",7],
+ ["Future plan: teaching, research & extension (max 3)","अध्यापन, संशोधन व विस्तारकार्याची भविष्यातील योजना (कमाल 3)",3],
+ ["Outreach / extension / co-curricular activities & NEP knowledge (max 2)","विस्तारकार्य, सह-अभ्यासक्रम उपक्रम व NEP ज्ञान (कमाल 2)",2]
+];
+const translations={
+ mr:{
+ title:"अध्यापक भरती – शैक्षणिक व संशोधन गुणांकन",subtitle:"महाराष्ट्रातील राज्य सार्वजनिक विद्यापीठे · शासन निर्णय दिनांक 11 फेब्रुवारी 2026",
+ langLabel:"भाषा / Language",postLabel:"अध्यापक संवर्ग",candidateLabel:"उमेदवाराचे नाव",subjectLabel:"विषय / विभाग",overviewTitle:"मूल्यांकन रचना",
+ academicTitle:"शैक्षणिक व संशोधन पात्रता",academicDesc:"संवर्गानुसार मूल्यांकन, कमाल 60 गुण.",teachingTitle:"अध्यापन कौशल्य मूल्यांकन",teachingDesc:"प्रात्यक्षिक अध्यापन, कमाल 20 गुण.",interviewTitle:"मुलाखत कामगिरी",interviewDesc:"निवड समिती मूल्यांकन, कमाल 20 गुण.",
+ ruleNote:"शासन निर्णयानुसार 60:20:20 गुणभार आहे. अध्यापन कौशल्यातील उपनिकषांना समान गुण किंवा विद्यापीठाने ठरविल्याप्रमाणे गुण देता येतात. मुलाखतीतील उपघटकांचे गुणांकन शासन निर्णयात उदाहरणादाखल दिले आहे.",
+ academicHeading:"1. शैक्षणिक व संशोधन पात्रता",academicInstruction:"शासन निर्णयातील संबंधित संवर्गाच्या गुणांकन तक्त्यानुसार पडताळलेले गुण नोंदवा. कमाल 60.",academicScoreLabel:"पडताळलेले शैक्षणिक व संशोधन गुण (0–60)",academicEvidenceLabel:"पडताळणी / नोंदी",
+ teachingHeading:"2. अध्यापन कौशल्य मूल्यांकन – प्रात्यक्षिक अध्यापन",teachingInstruction:"प्रत्येक निकषाला 0 ते 5 गुण द्या. एकूण कमाल 20. शासन निर्णयानुसार विद्यापीठ वेगळे गुण-वितरण ठरवू शकते.",teachingTotalLabel:"अध्यापन कौशल्य एकूण",
+ interviewHeading:"3. मुलाखत कामगिरी",interviewInstruction:"शासन निर्णयातील उदाहरणार्थ गुण-वितरणानुसार गुण नोंदवा.",interviewTotalLabel:"मुलाखत एकूण",committeeLabel:"समिती सदस्य / नोंदी",
+ resultHeading:"अंतिम गुण व पात्रता निर्देशक",grandLabel:"एकत्रित गुणवत्ता गुण",statusLabel:"किमान 50% मर्यादा",statusNote:"एकूण सरासरी किमान 50% गुण असलेले उमेदवार गुणवत्ता क्रमानुसार निवडीसाठी पात्र विचारात घेतले जातात.",guideTitle:"संवर्गनिहाय शैक्षणिक व संशोधन गुणांकन (कमाल 60)",
+ factorNote:"पदवी गुणांचा गुणक: NIRF क्रमांक 100 पर्यंत / पात्र परदेशी क्रमवारी 500 पर्यंत = 1.0; NIRF 101–200 / परदेशी 501–1000 = 0.9; इतर UGC मान्यताप्राप्त विद्यापीठे = 0.8. Ph.D. च्या कमाल गुणांनाही संबंधित गुणक लागू.",
+ complianceTitle:"महत्त्वाच्या प्रक्रियात्मक तरतुदी",sourceTitle:"स्रोत व वापराबाबत सूचना",disclaimer:"हे साधन केवळ मूल्यांकनास सहाय्य करण्यासाठी आहे. शासन निर्णय, UGC नियम, विद्यापीठाने मान्य केलेली प्रक्रिया किंवा मूळ कागदपत्रांच्या पडताळणीचा पर्याय नाही. शैक्षणिक/संशोधन गुण पडताळणीनंतरच नोंदवा. अध्यापनासाठी प्रत्येकी 5 गुणांचे समान विभाजन हे उदाहरणार्थ आहे; विद्यापीठ वेगळे वितरण ठरवू शकते.",
+ printBtn:"प्रिंट / PDF म्हणून जतन करा",resetBtn:"गुण रीसेट करा",statusGood:"50% मर्यादा पूर्ण",statusBad:"50% पेक्षा कमी",statusNA:"मूल्यांकन झालेले नाही"
+ }
+};
+function setText(id,enKey){if(translations.mr[enKey])$(id).textContent=translations.mr[enKey];}
+function renderCriteria(){
+ const mr=$("lang").value==="mr";
+ $("teachingCriteria").innerHTML=teaching.map((x,i)=>`<div class="criterion"><div><strong>${i+1}. ${x[mr?1:0]}</strong><small>${mr?"कमाल 5 गुण":"Maximum 5 marks"}</small></div><input aria-label="Teaching score ${i+1}" class="score teachScore" type="number" min="0" max="5" step=".5" value="0"><small>${mr?"निरीक्षण / पुरावा":"Observation / evidence"}: <input type="text" style="width:100%" placeholder="${mr?"नोंद":"Notes"}"></small></div>`).join("");
+ $("interviewCriteria").innerHTML=interview.map((x,i)=>`<div class="criterion"><div><strong>${i+1}. ${x[mr?1:0]}</strong><small>${mr?"कमाल ":"Maximum "}${x[2]} ${mr?"गुण":"marks"}</small></div><input aria-label="Interview score ${i+1}" class="score intScore" type="number" min="0" max="${x[2]}" step=".5" value="0"><small>${mr?"निरीक्षण / पुरावा":"Observation / evidence"}: <input type="text" style="width:100%" placeholder="${mr?"नोंद":"Notes"}"></small></div>`).join("");
+ document.querySelectorAll("input[type=number]").forEach(i=>i.addEventListener("input",calculate));
+}
+const details={
+ ap:["Assistant Professor: Academic records 46 (UG 10, PG 14, M.Phil./Ph.D. 17, JRF/NET/SET 5); approved teaching/postdoctoral experience 6; research skills 8 (publications/books/IPR 6, awards 2).","सहाय्यक प्राध्यापक: शैक्षणिक नोंदी 46 (पदवी 10, पदव्युत्तर 14, M.Phil./Ph.D. 17, JRF/NET/SET 5); मान्यताप्राप्त अध्यापन/पोस्ट-डॉक्टोरल अनुभव 6; संशोधन कौशल्ये 8 (प्रकाशने/पुस्तके/IPR 6, पुरस्कार 2)."],
+ assoc:["Associate Professor: Academic records 36 (UG 7, PG 12, M.Phil./Ph.D. 13, JRF/NET/SET 4); additional approved experience 6; research aptitude & innovation 18 (publications/books/IPR 7, awards 2, MOOCs 2, Ph.D. guidance 3, R&D/consultancy funds 4).","सहयोगी प्राध्यापक: शैक्षणिक नोंदी 36 (पदवी 7, पदव्युत्तर 12, M.Phil./Ph.D. 13, JRF/NET/SET 4); अतिरिक्त मान्यताप्राप्त अनुभव 6; संशोधन अभिक्षमता व नवोपक्रम 18 (प्रकाशने/पुस्तके/IPR 7, पुरस्कार 2, MOOCs 2, Ph.D. मार्गदर्शन 3, संशोधन/सल्लागार निधी 4)."],
+ prof:["Professor: Academic records 30 (UG 6, PG 10, M.Phil./Ph.D. 12, JRF/NET/SET 2); additional approved experience 6; research aptitude & innovation 24 (publications/books/IPR 10, awards 2, MOOCs 2, Ph.D. guidance 4, R&D/consultancy funds 6).","प्राध्यापक: शैक्षणिक नोंदी 30 (पदवी 6, पदव्युत्तर 10, M.Phil./Ph.D. 12, JRF/NET/SET 2); अतिरिक्त मान्यताप्राप्त अनुभव 6; संशोधन अभिक्षमता व नवोपक्रम 24 (प्रकाशने/पुस्तके/IPR 10, पुरस्कार 2, MOOCs 2, Ph.D. मार्गदर्शन 4, संशोधन/सल्लागार निधी 6)."]
+};
+const scoreSchedules={
+ dean:{ug:6,pg:10,mphil:3,phd:12,mphilPhdCap:12,net:2,exp:6,research:10,awards:2,mooc:2,guidance:4,funds:6},
+ dkrc:{ug:6,pg:10,mphil:3,phd:12,mphilPhdCap:12,net:2,exp:6,research:10,awards:2,mooc:2,guidance:4,funds:6}
+};
+const factorOptions=[
+ ["1","1.0 – NIRF category rank 1–100 / QS-THE-ARWU rank 1–500"],
+ ["0.9","0.9 – NIRF category rank 101–200 / QS-THE-ARWU rank 501–1000"],
+ ["0.8","0.8 – Other UGC-approved universities"]
+];
+function scoreByPercent(p,kind,cadre){
+ const v=Number(p);if(!p||!Number.isFinite(v))return 0;
+ const t={
+  ap:{ug:[[80,10],[60,8],[55,6],[45,4]],pg:[[80,14],[60,12],[55,10]],mphil:[[60,5],[55,3]]},
+  assoc:{ug:[[80,7],[60,6],[55,4],[45,2]],pg:[[80,12],[60,11],[55,10]],mphil:[[60,4],[55,3]]},
+  prof:{ug:[[80,6],[60,5],[55,4],[45,2]],pg:[[80,10],[60,8],[55,7]],mphil:[[60,3],[55,2]]}
+ }["prof"][kind];
+ for(const [threshold,marks] of t)if(v>=threshold)return marks;
+ return 0;
+}
+function renderAcademicBreakdown(){
+ const k=$("cadre").value,mr=$("lang").value==="mr",sc=scoreSchedules[k];
+ const label=mr?{ug:"पदवी",pg:"पदव्युत्तर",mphil:"एम.फिल.",phd:"पीएच.डी.",net:"JRF / NET / SET",exp:"संबंधित अनुभव",research:"संशोधन लेखने / पुस्तके / IPR",awards:"पुरस्कार",mooc:"MOOCs",guidance:"Ph.D. मार्गदर्शन",funds:"संशोधन / सल्लागार निधी"}:{ug:"Graduation",pg:"Post-Graduation",mphil:"M.Phil.",phd:"Ph.D.",net:"JRF / NET / SET",exp:"Relevant Experience",research:"Research Publications, Books & IPR",awards:"Awards",mooc:"MOOCs Developed",guidance:"Ph.D. Guidance",funds:"R&D / Consultancy Funds"};
+ const factorSelect=(id)=>`<select id="${id}" class="factorInput">${factorOptions.map(x=>`<option value="${x[0]}">${x[1]}</option>`).join("")}</select>`;
+ const degree=(key,max,needsPercent=true)=>`<div class="criterion"><div><strong>${label[key]} (max ${max})</strong><small>${needsPercent?(mr?"टक्केवारी व पदवी प्रदान करणाऱ्या विद्यापीठाचा प्रकार":"Percentage and degree-awarding university category"):(mr?"पीएच.डी. असल्यास निवडा":"Select if Ph.D. awarded")}</small></div>${needsPercent?`<div><input class="score degreePercent" id="${key}Percent" type="number" min="0" max="100" step=".01" placeholder="%"><small>Percentage</small></div>`:`<div><select id="phdYes"><option value="no">No</option><option value="yes">Yes</option></select></div>`}<div>${factorSelect(key+"Factor")}<small id="${key}Calculated">Calculated: 0</small></div></div>`;
+ let html=`<div class="panel" style="padding:12px;margin:12px 0;background:#fbfcfa"><strong>${mr?"A. शैक्षणिक नोंदी":"A. Academic Records"}</strong>
+ ${degree("ug",sc.ug)}${degree("pg",sc.pg)}${degree("mphil",sc.mphil)}
+ <div class="criterion"><div><strong>${label.phd} (max ${sc.phd})</strong><small>${mr?"पीएच.डी. प्रदान झाली असल्यास":"If Ph.D. degree has been awarded"}</small></div><div><select id="phdYes"><option value="no">No</option><option value="yes">Yes</option></select></div><div>${factorSelect("phdFactor")}<small id="phdCalculated">Calculated: 0</small></div></div>
+ <div class="criterion"><div><strong>${label.net} (max ${sc.net})</strong><small>${mr?"सर्व पात्रतांपैकी उच्चतम लागू गुण; एकत्रित कमाल":"Highest applicable qualification only; combined ceiling"}</small></div><div><select id="netLevel">${(k==="ap"?[["0","None"],["3","SET"],["4","NET"],["5","NET with JRF"]]:k==="assoc"?[["0","None"],["2","SET"],["3","NET"],["4","NET with JRF"]]:[["0","None"],["1","NET / SET"],["2","NET with JRF"]]).map(x=>`<option value="${x[0]}">${x[1]}</option>`).join("")}</select></div><small id="netCalculated">Calculated: 0</small></div>
+ <div class="subtotal" id="totalA" style="margin-top:12px;padding:10px;background:#edf3ee;border-radius:8px;font-weight:750;text-align:right">A Total: 0</div>
+ <p class="hint">${mr?"M.Phil. व Ph.D. गुणांची बेरीज संबंधित संयुक्त कमाल मर्यादेपर्यंतच ग्राह्य. प्रत्येक पदवीसाठी स्वतंत्र विद्यापीठ गुणक लागू.":"M.Phil. and Ph.D. scores are added only up to the cadre's combined maximum. Apply the relevant awarding-university factor separately to each degree."}</p></div>`;
+ html+=`<div class="panel" style="padding:12px;margin:12px 0;background:#fbfcfa"><strong>${mr?"B. अध्यापन अनुभव":"B. Teaching Experience"}</strong>
+ <div class="criterion"><div><strong>${label.exp} (max 6)</strong><small>${k==="ap"?(mr?"मान्यताप्राप्त अनुभव / पोस्ट-डॉक्टोरल; CHB साठी शैक्षणिक वर्षात किमान 9 महिने":"Approved teaching / postdoctoral; CHB requires at least 9 months in an academic year"):(mr?"किमान आवश्यक अनुभवापेक्षा अतिरिक्त वर्षे":"Additional years beyond prescribed minimum experience")}</small></div><input id="expYears" type="number" min="0" max="6" step=".01" value="0" class="score"><small id="expCalculated">Calculated: 0</small></div><div class="subtotal" id="totalB" style="margin-top:12px;padding:10px;background:#edf3ee;border-radius:8px;font-weight:750;text-align:right">B Total: 0 / 6</div></div>`;
+ html+=`<div class="panel" style="padding:12px;margin:12px 0;background:#fbfcfa"><strong>${mr?"C. संशोधन कौशल्ये / संशोधन अभिक्षमता व नवोपक्रम":"C. Research Skills / Research Aptitude & Innovation"}</strong>`;
+ const items=[["research",sc.research],["awards",sc.awards],["mooc",sc.mooc],["guidance",sc.guidance],["funds",sc.funds]].filter(x=>x[1]!=null);
+ items.forEach(([key,max])=>{html+=`<div class="criterion"><div><strong>${label[key]} (max ${max})</strong><small>${key==="research"?(k==="ap"?"Peer-reviewed journals; books and granted IPR": "Only eligible indexed publications (SciFinder / WoS / Scopus), books and granted IPR; additional publications only") : key==="awards"?"International / National: 2; State: 1; combined cap applies":key==="mooc"?"2 marks per eligible MOOC developed":key==="guidance"?"1 mark per Ph.D. awarded under supervision": "Enter marks as per cumulative eligible funds slab in GR"}</small></div><input class="score researchPart" data-key="${key}" data-max="${max}" id="r_${key}" type="number" min="0" max="${max}" step=".01" value="0"><small>${mr?"पडताळणीनंतर गुण":"Verified marks"}</small></div>`});
+ html+=`<div class="subtotal" id="totalC" style="margin-top:12px;padding:10px;background:#edf3ee;border-radius:8px;font-weight:750;text-align:right">C Total: 0</div></div><p class="hint">${mr?"University factor: NIRF 1–100 / QS-THE-ARWU 1–500 = 1.0; NIRF 101–200 / QS-THE-ARWU 501–1000 = 0.9; इतर UGC मान्यताप्राप्त विद्यापीठे = 0.8.":"University factor: NIRF 1–100 / QS-THE-ARWU 1–500 = 1.0; NIRF 101–200 / QS-THE-ARWU 501–1000 = 0.9; other UGC-approved universities = 0.8."}</p>`;
+ $("academicBreakdown").innerHTML=html;
+ document.querySelectorAll("#academicBreakdown input,#academicBreakdown select").forEach(e=>e.addEventListener("input",calculateAcademic));
+ document.querySelectorAll("#academicBreakdown select").forEach(e=>e.addEventListener("change",calculateAcademic));
+}
+function calculateAcademic(){
+ const k=$("cadre").value,sc=scoreSchedules[k],mr=$("lang").value==="mr";
+ const factor=id=>Number($(id+"Factor")?.value||1);
+ const pct=(key)=>scoreByPercent($(key+"Percent")?.value,key,k)*factor(key);
+ const ug=pct("ug"),pg=pct("pg"),mphil=pct("mphil");
+ const phd=$("phdYes")?.value==="yes"?sc.phd*factor("phd"):0;
+ const researchTotal=Math.min(sc.research||0,sc.research?Number($("r_research")?.value||0):0);
+ const net=Math.min(sc.net,Number($("netLevel")?.value||0));
+ const academic=ug+pg+Math.min(sc.mphilPhdCap,mphil+phd)+net;
+ const exp=Math.min(6,Math.max(0,Number($("expYears")?.value||0)));
+ let other=researchTotal;
+ ["awards","mooc","guidance","funds"].forEach(key=>{if(sc[key]!=null)other+=Math.min(sc[key],Math.max(0,Number($("r_"+key)?.value||0)))});
+ const total=Math.min(60,academic+exp+other);
+ const fmt=(v,m)=>v.toFixed(2)+" / "+m;
+ const aEl=$("totalA"),bEl=$("totalB"),cEl=$("totalC");
+ if(aEl)aEl.textContent=(mr?"A एकूण: ":"A Total: ")+fmt(academic, 30);
+ if(bEl)bEl.textContent=(mr?"B एकूण: ":"B Total: ")+fmt(exp,6);
+ if(cEl)cEl.textContent=(mr?"C एकूण: ":"C Total: ")+fmt(other,24);
+ $("academicScore").value=total.toFixed(2);
+ [["ug",ug],["pg",pg],["mphil",mphil],["phd",phd],["net",net],["exp",exp]].forEach(([key,val])=>{const el=$(key+"Calculated");if(el)el.textContent="Calculated: "+val.toFixed(2)});
+ calculate();
+}
+function cadreChange(){const k=$("cadre").value,mr=$("lang").value==="mr";$("cadreDetails").innerHTML=`<div class="note">${k==="dean"?(mr?"निवडलेले पद: अधिष्ठाता (Dean). पात्रता व अनुभव Direction No. 38 of 2026 आणि Advertisement No. 65 नुसार स्वतंत्रपणे पडताळा. Dean हे स्वतंत्र statutory officer पद आहे; 11.02.2026 GR मधील 60 गुणांची पद्धत Dean पदासाठी आपोआप लागू होते असे गृहीत धरू नये.":"Selected post: Dean. Verify eligibility and experience separately against Direction No. 38 of 2026 and Advertisement No. 65. Dean is a separate statutory officer post; do not assume that the 60-mark method in the 11.02.2026 GR automatically applies to Dean."):(mr?"निवडलेले पद: संचालक, ज्ञानस्रोत केंद्र (KRC). Direction No. 27 of 2026 नुसार Section 2(61) व Section 102 चा संदर्भ आहे. मात्र GR मध्ये KRC साठी स्वतंत्र 60 गुणांची गुणांकन-सारणी नाही; सक्षम प्राधिकरणाची स्पष्ट मान्यता आवश्यक.":"Selected post: Director, Knowledge Resource Centre (KRC). Direction No. 27 of 2026 refers to Sections 2(61) and 102. However, the GR does not prescribe a separate 60-mark schedule for KRC; confirmation/adoption by the competent authority is required.")}</div>`;renderAcademicBreakdown();}
+function calculate(){
+ const a=Math.min(60,Math.max(0,Number($("academicScore").value)||0));
+ const out=$("academicScore");
+ if(out) out.value=a.toFixed(2);
+}
+function languageChange(){const mr=$("lang").value==="mr";if(mr){Object.keys(translations.mr).forEach(k=>{const el=$(k);if(el)el.textContent=translations.mr[k]});$("title").textContent=translations.mr.title;$("subtitle").textContent=translations.mr.subtitle;$("cadre").options[0].text="अधिष्ठाता (Dean)";$("cadre").options[1].text="संचालक, ज्ञानस्रोत केंद्र (KRC)";$("candidate").placeholder="उमेदवाराचे नाव";$("subject").placeholder="विषय";}else{location.reload();return;}cadreChange();}
+$("lang").addEventListener("change",languageChange);$("cadre").addEventListener("change",cadreChange);$("academicScore").addEventListener("input",calculate);
+$("printBtn")?.addEventListener("click",()=>window.print());$("resetBtn")?.addEventListener("click",()=>{document.querySelectorAll('input[type=number]').forEach(x=>x.value=0);document.querySelectorAll('#academicBreakdown select').forEach(x=>x.selectedIndex=0);document.querySelectorAll('textarea').forEach(x=>x.value="");document.querySelectorAll('input[type=text]').forEach(x=>x.value="");calculateAcademic();});
+cadreChange();
+</script></body></html>
